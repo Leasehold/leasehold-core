@@ -7,7 +7,7 @@ RUN mkdir -p /home/leasehold/leasehold-core; \
     useradd -ms /bin/bash leasehold; \
     apt-get update; \
     apt-get install -qqy git curl wget build-essential gzip lsb-release; \
-    wget -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && sh c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -sc)-pgdg ain" > /etc/apt/sources.list.d/PostgreSQL.list'; \
+    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -sc)-pgdg main" > /etc/apt/sources.list.d/PostgreSQL.list'; \
     apt-get update; \
     apt-get install -qqy postgresql-10 nodejs; \
     sed -i 's/max_connections = 100/max_connections = 300/g' /etc/postgresql/10/main/postgresql.conf; \
