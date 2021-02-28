@@ -44,7 +44,7 @@ const execCommand = (command) => {
     const { stdout: ls } = await exec(`ls`);
     if (!ls.includes(LISK_SNAPSHOT)) {
       commandLog(
-        'IMPORTANT: Getting Lisk snapshot. This process might take a while!',
+        'IMPORTANT: Getting Lisk snapshot. This process will take a while!',
         true,
       );
       await execCommand(
@@ -56,7 +56,7 @@ const execCommand = (command) => {
 
     if (!ls.includes(LEASEHOLD_SNAPSHOT)) {
       commandLog(
-        'IMPORTANT: Getting Leasehold snapshot. This process might take a while!',
+        'IMPORTANT: Getting Leasehold snapshot. This process will take a while!',
         true,
       );
       await execCommand(
@@ -67,6 +67,10 @@ const execCommand = (command) => {
     }
 
     commandLog('Building docker container');
+    commandLog(
+      'IMPORTANT: This process will take a while!',
+      true,
+    );
     await execCommand(`docker build -t ${IMAGE_NAME} .`);
 
     commandLog('Removing container if exists.');
@@ -74,7 +78,7 @@ const execCommand = (command) => {
 
     commandLog(`Running container with name ${CONTAINER_NAME}`);
     await execCommand(
-      `docker run -d -p 8010:8010 -p 8001:8001 -p 5440:5432 --name ${CONTAINER_NAME} ${IMAGE_NAME}`,
+      `docker run -d -p 8010:8010 -p 8001:8001 --name ${CONTAINER_NAME} ${IMAGE_NAME}`,
     );
 
     commandLog('Getting IP of container');
