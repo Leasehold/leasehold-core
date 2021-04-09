@@ -301,8 +301,9 @@
       "chains": {
         "lsk": {
           "moduleAlias": "ldem_lisk_chain",
+          "chainCryptoLibPath": "../lisk-chain-crypto",
           "useBlocksChangeChannel": true,
-          "walletAddress": "",
+          "multisigAddress": "",
           "sharedPassphrase": "",
           "passphrase": "",
           "requiredConfirmations": 2,
@@ -323,8 +324,9 @@
         },
         "lsh": {
           "moduleAlias": "leasehold_chain",
+          "chainCryptoLibPath": "../lisk-chain-crypto",
           "useBlocksChangeChannel": true,
-          "walletAddress": "",
+          "multisigAddress": "",
           "sharedPassphrase": "",
           "passphrase": "",
           "requiredConfirmations": 2,
