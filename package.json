@@ -30,7 +30,7 @@
     "leasehold-chain": "^4.1.0",
     "leasehold-http-api": "^2.1.4",
     "lisk-chain-crypto": "^1.0.0",
-    "lisk-dex": "^12.0.3",
+    "lisk-dex": "^12.0.4",
     "lisk-dex-http-api": "^6.0.0",
     "object-assign-deep": "^0.4.0"
   }
